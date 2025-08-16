@@ -9,10 +9,10 @@ def cheatsCheck(cmd: str) -> tuple[int, int]:
 		return int(cmd) # Proceed game normally
 	
 	elif cmd == "adminImmortal":
-		return utils.adminImmortal(cmd) # Apply Immortal command
+		return utils.adminImmortal() # Apply Immortal command
 	
 	elif cmd == "adminFyou":
-		return utils.adminFyou(cmd) # Apply Fyou command
+		return utils.adminFyou() # Apply Fyou command
 	
 	else:
 		return cmd # Invalid command, return unchanged values
