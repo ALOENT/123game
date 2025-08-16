@@ -1,27 +1,27 @@
 import random
 import utils as utils
+from utils import options, WIN_SCORE
 
 
-def regularGame():
+def regular_game():
 	"""
 	Function to play the regular game without admin commands and randomness.
 	"""
 
 	print("-----------------------------------------------------------------------")
 	print("Starting regular game...")
-	print("RULES:\n1.You can enter your choice as a number (1 for stone, 2 for paper, 3 for scissor).\n2. First to score 11 points wins the game.")
+	utils.print_rules()
 
-	options = {1: "stone", 2: "paper", 3: "scissor"}
 	# User and Computer Scores
-	compS=0
-	userS=0
+	comp_score = 0
+	user_score = 0
 
 	# Main game loop
-	while compS<11 and userS<11:
+	while comp_score<WIN_SCORE and user_score<WIN_SCORE:
 		
 		try:
-			user = int(input(f"Enter your choice: "))
-			if user not in [1, 2, 3]:
+			user = input(f"Enter your choice: ")
+			if user not in list(options.keys()):
 				print(f"Invalid choice!!!\nChoose from these options: {options}")
 				continue
 		except ValueError:
@@ -29,21 +29,23 @@ def regularGame():
 			continue
 
 		comp=random.choice(list(options.keys()))
+
 		print(f"Computer's choice: {options[comp]}\tYour choice: {options[user]}")
 		if user==comp:
 			print("Its a tie! ")
-		elif (user==1 and comp== 3) or (user==2 and comp==1) or (user==3 and comp==2):
+		elif (user=="1" and comp== "3") or (user=="2" and comp=="1") or (user=="3" and comp=="2"):
 			print("You Scored !!!!")
-			userS += 1
+			user_score += 1
 
-		elif (user==3 and comp==1) or (user==2 and comp==3) or (user==1 and comp==2):
+		elif (user=="3" and comp=="1") or (user=="2" and comp=="3") or (user=="1" and comp=="2"):
 			print("Computer Scored !!!!!")
-			compS+=1
-		print(f"Computer's score: {compS} \t User's score: {userS}")
+			comp_score+=1
+
+		print(f"Computer's score: {comp_score} \t User's score: {user_score}")
 		print("-----------------------------------------------------------------------")
 
 	# Check for game end
-	if compS==11 : 
+	if comp_score==WIN_SCORE : 
 		print("Computer WON !!! ")
 	else :
 		print("tu jit gya ladlee !!!") 
