@@ -24,11 +24,15 @@ A modular, Python-based command-line Rock-Paper-Scissors game with selectable di
 ### Installation
 
 1. **Clone this repository:**
+```
 git clone https://github.com/ALOENT/123game.git
 cd 123game
+```
 
 2. **Run the game:**
+```
 python main.py
+```
 
 ---
 
@@ -53,6 +57,7 @@ python main.py
 
 ## File Structure
 
+```
 123game/
 ├── main.py               # Entry point, menu, and mode selection
 ├── utils.py              # Shared constants, rules, and utility functions
@@ -61,6 +66,7 @@ python main.py
 │   ├── regular.py        # Regular mode logic
 │   └── extreme.py        # Extreme mode logic
 └── README.md             # Project documentation
+```
 
 
 ---
