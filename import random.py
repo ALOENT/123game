@@ -7,8 +7,8 @@ l=["stone", "paper", "scissor"]
 comp=0
 userr=0
 while comp<5 and userr<5:
-	user=input("enter your choice: ")
-	
+	ch = int(input(f"Enter your choice({l}): "))
+	user = l[ch-1]
 	if user not in l:
 		print(f"choose from these options: {l}")
 		continue
