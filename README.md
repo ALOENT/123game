@@ -54,13 +54,14 @@ python main.py
 ## File Structure
 
 123game/
-├── main.py # Entry point, menu, and mode selection
-├── utils.py # Shared constants, rules, and utility functions
+├── main.py               # Entry point, menu, and mode selection
+├── utils.py              # Shared constants, rules, and utility functions
 ├── modes/
-│ ├── easybot.py # EasyBot mode logic
-│ ├── regular.py # Regular mode logic
-│ └── extreme.py # Extreme mode logic
-└── README.md # Project documentation
+│   ├── easybot.py        # EasyBot mode logic
+│   ├── regular.py        # Regular mode logic
+│   └── extreme.py        # Extreme mode logic
+└── README.md             # Project documentation
+
 
 ---
 
