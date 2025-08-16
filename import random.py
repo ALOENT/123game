@@ -2,7 +2,7 @@ import random
 
 l=["stone", "paper", "scissor"]
 
-
+##########33333
 
 comp=0
 userr=0
