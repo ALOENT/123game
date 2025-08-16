@@ -56,7 +56,6 @@ python main.py
 ---
 
 ## File Structure
-
 ```
 123game/
 ├── main.py               # Entry point, menu, and mode selection
