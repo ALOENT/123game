@@ -1,3 +1,4 @@
 You can use these commands to experience admin controls
 
-1. To win on every choice: adminImmortal
+1. To win 1 point : adminImmortal
+2. To lose 1 point : adminFyou
