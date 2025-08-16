@@ -61,6 +61,7 @@ python main.py
 123game/
 ├── main.py               # Entry point, menu, and mode selection
 ├── utils.py              # Shared constants, rules, and utility functions
+├── admin commands.txt    # Includes list of cheatcodes with brief description
 ├── modes/
 │   ├── easybot.py        # EasyBot mode logic
 │   ├── regular.py        # Regular mode logic
