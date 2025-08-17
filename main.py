@@ -8,7 +8,6 @@ colorama.init(autoreset=True)
 
 def main():
     # Greetings 
-    # from colorama import Fore, Back, Style
     print(f"{Fore.YELLOW}{Back.BLACK}:){Style.RESET_ALL}")
     print(Back.BLUE+Fore.GREEN+"Welcome to the game of Stone, Paper, Scissor!")
 
