@@ -1,12 +1,15 @@
-from utils import options, commands, WIN_SCORE, cheats_check, print_rules
-	
+import colorama
+from colorama import Fore, Back, Style
+from utils import options, commands, WIN_SCORE, cheats_check, print_rules, update_scores, check_winner
+colorama.init(autoreset=True)
+
 
 def extreme_bot():
 	"""
 	Function to play the extreme bot game with a 10% probability of scoring.
 	"""
 	print("------------------------------------------------------------------------")
-	print("Starting ExtremeBot mode...")
+	print(f"{Fore.YELLOW}{Back.BLACK}Starting ExtremeBot mode...")
 	print_rules()
 
 	# User and Computer Scores
@@ -19,7 +22,7 @@ def extreme_bot():
 			user = input(f"Enter your choice: ")
 			# If choice is not valid 
 			if user not in list(options.keys()) and user not in commands:
-				print(f"Invalid choice!!!\nChoose from these options: {options}")
+				print(f"{Fore.LIGHTMAGENTA_EX}Invalid choice!!!\nChoose from these options: {options}")
 				continue
 		except ValueError:
 			print("Invalid input! Please enter a number (1, 2 or 3).")
@@ -28,24 +31,15 @@ def extreme_bot():
 		user, comp = cheats_check(user, "hard")
 
 		print(f"Computer's choice: {options[comp]}\tYour choice: {options[user]}")
-		if user == comp:
-			print("Its a tie! ")
-		elif (user=="1" and comp== "3") or (user=="2" and comp=="1") or (user=="3" and comp=="2"):
-			print("You Scored !!!!")
-			user_score += 1
+		
+		user_score, comp_score = update_scores(user, comp, user_score, comp_score)
 
-		elif (user=="3" and comp=="1") or (user=="2" and comp=="3") or (user=="1" and comp=="2"):
-			print("Computer Scored !!!!!")
-			comp_score+=1
-		print(f"Computer's score: {comp_score} \t User's score: {user_score}")
+		print(f"{Back.BLACK}Computer's score: {comp_score} \t User's score: {user_score}")
 		print("-----------------------------------------------------------------------")
 
 	# Check for game end
-	if comp_score==WIN_SCORE : 
-		print("Computer WON !!!\nKaidee me rahiyee Chhotee, Wrna g*nd pe lagenge sotteee!!!")
-	else :
-		print("tu jit gya ladlee\nLuck bhari h aaj tera!!!") 
+	check_winner(comp_score, user_score, game_mode="hard")
 
 	# Ask if the user wants to play again
 	print("-----------------------------------------------------------------------")
-	print("Game Over!")
+	print(f"{Fore.WHITE}{Back.YELLOW}{Style.BRIGHT}Game Over!")
